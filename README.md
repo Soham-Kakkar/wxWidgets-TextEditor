@@ -69,6 +69,10 @@ A simple, lightweight text editor built with **wxWidgets** using **XRC** (XML Re
 - Recent files list
 - Theme support
 
+## 📝 License
+
+This project is MIT licensed. See [LICENSE](LICENSE) for details.
+
 ---
 
 **Built with ❤️ using wxWidgets** | Contributions welcome!

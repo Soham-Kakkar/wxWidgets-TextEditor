@@ -1,9 +1,9 @@
-#ifndef MYAPP_H
-#define MYAPP_H
+#ifndef MYAPP_HPP
+#define MYAPP_HPP
 
 #include <wx/wx.h>
 #include <wx/xrc/xmlres.h>
-#include "EventHandlers.h"
+#include "EventHandlers.hpp"
 
 class MyApp : public wxApp
 {
@@ -24,4 +24,4 @@ public:
     void OnPaste(wxCommandEvent& event);
 };
 
-#endif // MYAPP_H
+#endif // MYAPP_HPP

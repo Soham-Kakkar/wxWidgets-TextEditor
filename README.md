@@ -61,6 +61,7 @@ A simple, lightweight text editor built with **wxWidgets** using **XRC** (XML Re
 ## 🚀 Future Enhancements
 
 - Font size control
+- Proper file saving (currently saveAs only)
 - Syntax highlighting
 - Find/Replace dialog
 - Multiple tabs/documents

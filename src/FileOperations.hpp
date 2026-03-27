@@ -1,5 +1,5 @@
-#ifndef FILEOPERATIONS_H
-#define FILEOPERATIONS_H
+#ifndef FILEOPERATIONS_HPP
+#define FILEOPERATIONS_HPP
 
 #include <wx/wx.h>
 #include <wx/textfile.h>
@@ -12,4 +12,4 @@ namespace FileOperations {
     void SaveFile(wxTextCtrl* textCtrl);
 }
 
-#endif // FILEOPERATIONS_H
+#endif // FILEOPERATIONS_HPP

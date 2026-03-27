@@ -1,7 +1,7 @@
-#include "MyApp.h"
-#include "FileOperations.h"
-#include "UIManager.h"
-#include "EventHandlers.h"
+#include "MyApp.hpp"
+#include "FileOperations.hpp"
+#include "UIManager.hpp"
+#include "EventHandlers.hpp"
 
 wxFrame* MyApp::getMainFrame() {
     frame = UIManager::LoadFrame("MainFrame");  // Specify absolute path of XRC file to enable UI 'hot' reload

@@ -1,5 +1,5 @@
-#ifndef EVENTHANDLERS_H
-#define EVENTHANDLERS_H
+#ifndef EVENTHANDLERS_HPP
+#define EVENTHANDLERS_HPP
 
 #include <wx/wx.h>
 
@@ -12,4 +12,4 @@ namespace EventHandlers {
     void OnPaste(wxCommandEvent& event);
 }
 
-#endif // EVENTHANDLERS_H
+#endif // EVENTHANDLERS_HPP

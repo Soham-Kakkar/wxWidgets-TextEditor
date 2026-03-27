@@ -1,5 +1,5 @@
-#include "UIManager.h"
-#include "resources/UI.h"
+#include "UIManager.hpp"
+#include "resources/UI.hpp"
 #include <wx/log.h>
 
 namespace UIManager {

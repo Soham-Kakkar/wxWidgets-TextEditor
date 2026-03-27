@@ -11,9 +11,11 @@ RES_DIR = $(SRC_DIR)/resources
 SRC_FILES = $(wildcard $(SRC_DIR)/*.cpp)
 EXEC = $(BUILD_DIR)/MyWxApp
 
+all: release
+
 # Target for debugging build
 debug: $(SRC_FILES)
-	$(CXX) $(CXXFLAGS) $(SRC_FILES) -o $(EXEC) $(LDFLAGS)
+	$(CXX) -DDEBUG $(CXXFLAGS) $(SRC_FILES) -o $(EXEC) $(LDFLAGS)
 
 # Target for release build
 release: $(SRC_FILES)
@@ -21,7 +23,7 @@ release: $(SRC_FILES)
 	sh get_deps.sh  
 	$(CXX) -O2 $(CXXFLAGS) $(SRC_FILES) -o $(EXEC) $(LDFLAGS)
 
-# Clean up executable
+# Clean up executable and generated files
 clean:
 	rm -f $(EXEC)
-	rm -rf $(RES_DIR)/*.h
+	rm -f $(RES_DIR)/*.hpp $(RES_DIR)/*.h

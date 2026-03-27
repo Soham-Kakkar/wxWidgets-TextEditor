@@ -4,7 +4,11 @@
 #include "EventHandlers.hpp"
 
 wxFrame* MyApp::getMainFrame() {
-    frame = UIManager::LoadFrame("MainFrame");  // Specify absolute path of XRC file to enable UI 'hot' reload
+#ifdef DEBUG
+    frame = UIManager::LoadFrame("MainFrame", "/path/to/src/resources/UI.xrc");  // Debug: direct XRC load for hot-reload
+#else
+    frame = UIManager::LoadFrame("MainFrame");  // Release: embedded UI.hpp
+#endif
     return frame;
 }
 

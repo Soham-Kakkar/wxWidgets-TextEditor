@@ -1,8 +1,7 @@
-# MyWxApp - Cross-Platform Text Editor
+# MyWxApp - Text Editor
 
 [![wxWidgets](https://img.shields.io/badge/wxWidgets-3.2-blue.svg)](https://www.wxwidgets.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Platform: Linux/macOS/Windows](https://img.shields.io/badge/Platform-Cross--platform-green.svg)](https://www.wxwidgets.org/)
 
 A simple, lightweight text editor built with **wxWidgets** using **XRC** (XML Resource) for declarative UI design. Supports opening, editing, and saving plain text (.txt) and Markdown (.md) files.
 
@@ -35,8 +34,7 @@ A simple, lightweight text editor built with **wxWidgets** using **XRC** (XML Re
    ./wxrc.sh  # Processes src/resources/UI.xrc → UI.hpp
 ```
 
-3. **Build**:
-   
+**Release** (generates/compiles UI.hpp for embedded resources):
 ```bash
    make clean && make
 ```
@@ -50,9 +48,10 @@ A simple, lightweight text editor built with **wxWidgets** using **XRC** (XML Re
 ## 🐛 Troubleshooting
 
 - **Missing libs in build/**: Run `./get_deps.sh` again
-- **UI not loading**: Ensure `./wxrc.sh` ran successfully (check UI.hpp)
+- **UI not loading (debug)**: Check src/resources/UI.xrc exists
+- **UI not loading (release)**: Run `./wxrc.sh` (check UI.hpp generated)
 - **GTK errors**: Install `libgtk-3-dev` and wxGTK3 deps
-- **Hot reload**: Edit `src/resources/UI.xrc` and restart (absolute path in MyApp.cpp)
+- **Hot reload**: Use `make debug`, edit src/resources/UI.xrc, restart
 
 ## 🚀 Future Enhancements
 
@@ -64,6 +63,7 @@ A simple, lightweight text editor built with **wxWidgets** using **XRC** (XML Re
 - Preferences/Settings
 - Recent files list
 - Theme support
+- Cross Platform Support
 
 ## 📝 License
 

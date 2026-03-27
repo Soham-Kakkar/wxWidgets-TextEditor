@@ -27,28 +27,24 @@ A simple, lightweight text editor built with **wxWidgets** using **XRC** (XML Re
    
 ```bash
    ./get_deps.sh
-   
 ```
 
 2. **Generate UI Resources**:
    
 ```bash
    ./wxrc.sh  # Processes src/resources/UI.xrc → UI.hpp
-   
 ```
 
 3. **Build**:
    
 ```bash
    make clean && make
-   
 ```
 
 4. **Run**:
    
 ```bash
    ./build/MyWxApp
-   
 ```
 
 ## 🐛 Troubleshooting

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resource>
+    <object class="wxFrame" name="MainFrame">
+        <title>My XRC Window</title>
+        <size>800,600</size>
+
+        <!-- Menu Bar -->
+        <object class="wxMenuBar" name="MenuBar">
+            <object class="wxMenu" name="FileMenu">
+                <label>File</label>
+                <object class="wxMenuItem" name="Open">
+                    <label>Open\tCtrl-O</label>
+                </object>
+                <object class="wxMenuItem" name="Save">
+                    <label>Save\tCtrl-S</label>
+                </object>
+                <object class="wxMenuItem" name="Exit">
+                    <label>Exit\tCtrl-Q</label>
+                </object>
+            </object>
+            <object class="wxMenu" name="EditMenu">
+                <label>Edit</label>
+                <object class="wxMenuItem" name="Cut">
+                    <label>Cut\tCtrl-X</label>
+                </object>
+                <object class="wxMenuItem" name="Copy">
+                    <label>Copy\tCtrl-C</label>
+                </object>
+                <object class="wxMenuItem" name="Paste">
+                    <label>Paste\tCtrl-V</label>
+                </object>
+            </object>
+        </object>
+
+        <!-- Main Panel and Layout -->
+        <object class="wxPanel" name="MainPanel">
+            <object class="wxBoxSizer">
+                <orient>wxVERTICAL</orient>
+                <object class="sizeritem">
+                    <option>1</option>
+                    <flag>wxGROW</flag>
+                    <object class="wxTextCtrl" name="TextArea">
+                        <style>wxTE_MULTILINE | wxTE_LEFT | wxTE_RICH2 | wxTE_PROCESS_ENTER | wxTE_PROCESS_TAB</style>
+                    </object>
+                </object>
+            </object>
+        </object>
+    </object>
+</resource>

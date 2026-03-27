@@ -33,7 +33,7 @@ A simple, lightweight text editor built with **wxWidgets** using **XRC** (XML Re
 2. **Generate UI Resources**:
    
 ```bash
-   ./wxrc.sh  # Processes src/resources/UI.xrc → UI.h
+   ./wxrc.sh  # Processes src/resources/UI.xrc → UI.hpp
    
 ```
 
@@ -54,7 +54,7 @@ A simple, lightweight text editor built with **wxWidgets** using **XRC** (XML Re
 ## 🐛 Troubleshooting
 
 - **Missing libs in build/**: Run `./get_deps.sh` again
-- **UI not loading**: Ensure `./wxrc.sh` ran successfully (check UI.h)
+- **UI not loading**: Ensure `./wxrc.sh` ran successfully (check UI.hpp)
 - **GTK errors**: Install `libgtk-3-dev` and wxGTK3 deps
 - **Hot reload**: Edit `src/resources/UI.xrc` and restart (absolute path in MyApp.cpp)
 

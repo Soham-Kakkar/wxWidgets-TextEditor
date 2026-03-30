@@ -1,17 +1,17 @@
-# MyWxApp - Text Editor
+# MyWxApp - XRC-Based Text Editor (C++ / wxWidgets)
 
 [![wxWidgets](https://img.shields.io/badge/wxWidgets-3.2-blue.svg)](https://www.wxwidgets.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-A simple, lightweight text editor built with **wxWidgets** using **XRC** (XML Resource) for declarative UI design. Supports opening, editing, and saving plain text (.txt) and Markdown (.md) files.
+A simple, lightweight text editor built with **wxWidgets** using **XRC** (XML Resource) for declarative UI design, focusing on clean separation between UI and application logic. Supports opening, editing, and saving plain text (.txt) and Markdown (.md) files.
 
 ## ✨ Features
 
 - **File Operations**: Open (Ctrl+O), Save (Ctrl+S), Exit (Ctrl+Q) with confirmation dialog
-- **Edit Operations**: Cut (Ctrl+X), Copy (Ctrl+C), Paste (Ctrl+V)
-- **File Format Support**: .txt, .md, and all files (*.*)
-- **Hot-reload UI**: XRC-based UI supports reloading without rebuild
-- **Keyboard Shortcuts**: Standard editor shortcuts throughout
+- **Edit Operations**: Cut, Copy, Paste with standard shortcuts
+- **File Support**: .txt, .md, and generic file loading
+- **XRC-Based UI**: Declarative UI with runtime reload support (debug mode)
+- **Keyboard Shortcuts**: Familiar editor bindings
 
 ## 🛠️ Prerequisites
 
@@ -20,36 +20,46 @@ A simple, lightweight text editor built with **wxWidgets** using **XRC** (XML Re
 - **make**
 - Linux/macOS (Windows via MSYS2 or vcpkg)
 
-### Build Instructions:
+## Build Instructions:
 
-1. **Get Dependencies**:
-   
+### Make sure WxWidgets is installed:
 ```bash
-   ./get_deps.sh
+# Ubuntu/Debian
+sudo apt install libwxgtk3.2-dev
+
+# Fedora
+sudo dnf install wxGTK-devel
+
+# Arch
+sudo pacman -S wxwidgets
 ```
 
-2. **Generate UI Resources**:
-   
+### Debug Build (hot reloadable by editing the XRC file and restarting the application):
+Compile:
 ```bash
-   ./wxrc.sh  # Processes src/resources/UI.xrc → UI.hpp
+make
 ```
 
-**Release** (generates/compiles UI.hpp for embedded resources):
+Run:
 ```bash
-   make clean && make
+./build/debug/MyWxApp
 ```
 
-4. **Run**:
-   
+### Release Build (generates/compiles UI.hpp for embedded resources):
+Compile:
 ```bash
-   ./build/MyWxApp
+make release
+```
+
+Run:   
+```bash
+./build/release/MyWxApp
 ```
 
 ## 🐛 Troubleshooting
 
-- **Missing libs in build/**: Run `./get_deps.sh` again
-- **UI not loading (debug)**: Check src/resources/UI.xrc exists
-- **UI not loading (release)**: Run `./wxrc.sh` (check UI.hpp generated)
+- **Missing libs**: Make sure wxWidgets is installed. [Installation Guide](https://docs.wxwidgets.org/3.2/overview_install.html)
+- **UI not loading**: Check UI.xrc exists and is correctly linked to in MyApp.cpp. Use Absolute Path.
 - **GTK errors**: Install `libgtk-3-dev` and wxGTK3 deps
 - **Hot reload**: Use `make debug`, edit src/resources/UI.xrc, restart
 
